@@ -1,0 +1,348 @@
+<head><title>CPro</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://bootswatch.com/4/yeti/bootstrap.css" media="screen">
+<script src=gostCrypto.dist.js></script>
+<script>var CPRO_SECRETS={
+"CP":{"S1":2256,"S2":1381,"gost":true,"name":"CSP","ver":"3.0","pack":"CP"},
+"CF":{"S1":2840,"S2":8774,"gost":true,"srv":true,"uts":true,"name":"JCP","pack":"CF","ver":"2.0"},
+"CT":{"S1":5555,"S2":7777,"gost":true,"srv":true,"uts":true,"name":"JTLS","pack":"CT","ver":"2.0"},
+"PF":{"S1":1503,"S2":4491,"gost":true,"srv":true,"uts":true,"name":"Java CSP","pack":"PF","ver":"4.0"},
+"05":{"S1":7632,"S2":1390,"key":"{F8DCE222-4388-468D-A174-97669AA8C3FF}","name":"Office Signature","pack":"05","trial":"{232B5FEB-32ED-4DD4-8442-2BF332658306}","ver":"2.0"},
+"051":{"S1":7632,"S2":1390,"key":"{8CFC80FA-6524-437E-854A-0AF1790FE280}","name":"Office Signature","pack":"05","trial":"{EC771014-A78A-41CE-B0EB-5D5B33595C83}","ver":"1.0"},
+"0A":{"S1":6283,"S2":4181,"key":"SOFTWARE/Crypto Pro/OCSPAPI/2.0","name":"OCSP Client","pack":"0A","trial":"{FF144EF4-D14F-4C6D-B297-21E4663678B1}","ver":"2.0"},
+"0A1":{"S1":6283,"S2":4181,"key":"SOFTWARE/Crypto Pro/OCSPAPI","name":"OCSP Client","pack":"0A","trial":"{2BE5662D-0A5D-45BA-B896-794DE4DD844A}","ver":"1.0"},
+"0C":{"S1":4681,"S2":9468,"key":"{061EBE07-B821-4AE6-A9D2-343199B2FA8B}","name":"OCSP Server","pack":"0C","trial":"{AFC33692-B993-4326-8A60-808AAE67D2E8}","ver":"1.0"},
+"0D":{"S1":3466,"S2":9024,"key":"{42AD319A-FC11-4593-8516-AD9DC7BCE01D}","name":"OCSP SDK","pack":"0D","trial":"{64B4C84F-E7EE-4F9A-B9DA-020658EBCF2A}","ver":"1.0"},
+"1P":{"S1":8465,"S2":7712,"key":"{B64F15DF-B037-4B8E-994A-8A7F16AE559D}","name":"IPsec","pack":"1P","trial":"{68CEEFA3-51D3-4C4F-84DE-9D4D87BF4E1C}","ver":"1.0"},
+"36":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{54A08450-B343-40B0-924E-68F031450996}","name":"CSP","pack":"36","subver":"00","trial":"{39609410-04E2-4AFC-BCF8-34CA429798CF}","ver":"3.6"},
+"36A":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{E7A8D169-61E2-41B6-BE7D-FBADFD6D65AE}","name":"CSP 0A?","pack":"36","subver":"0A","ver":"3.6"},
+"36G":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{6EC0014E-976B-46F3-AC7D-3F992B4AE9B5}","name":"eToken GOST CSP","pack":"36","subver":"0G","ver":"3.6"},
+"36E":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{EFAFF4D1-B76E-4C0C-9B7F-0BDF00CD5AFC}","name":"eToken CSP","pack":"36","subver":"0E","ver":"3.6"},
+"36M":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{8CBFA1BD-0151-4FBC-99AB-FBAAC4B4E09E}","name":"Magistra CSP","pack":"36","subver":"0M","ver":"3.6"},
+"36R":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{BE3CE2FE-08AB-4711-93C2-26DFE2BD7273}","name":"ruToken CSP","pack":"36","subver":"0R","ver":"3.6"},
+"36T":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{943BB6AF-3021-48E8-B23D-C4EF1F0E4ED1}","name":"Gemalto CSP","pack":"36","subver":"0T","ver":"3.6"},
+"36U":{"S1":5097,"S2":3409,"gost":true,"srv":true,"uts":true,"key":"{188F4791-B9A8-4DBF-8D55-68042F74E9FC}","name":"UEC CSP","pack":"36","subver":"0U","ver":"3.6"},
+"39":{"S1":8655,"S2":7915,"gost":true,"srv":true,"uts":true,"key":"{39D25A86-A5E6-42FC-9C8F-EFA4C138B08C}","name":"CSP","pack":"39","trial":"{E1C6F5FD-77A1-4F3C-B53E-F2479EFC0FC8}","ver":"3.9"},
+"403":{"S1":3462,"S2":1107,"gost":true,"srv":true,"uts":true,"key":"{38C0732A-2E38-4BF5-B673-57449DC80CA1}","name":"CSP","pack":"40","trial":"{4448EEC3-836F-4D11-B72D-839C5C79702C}","ver":"3.9"},
+"40":{"S1":3462,"S2":1107,"gost":true,"srv":true,"uts":true,"key":"{407E5BA7-6406-40BF-A4DC-3654B8F584C1}","name":"CSP","pack":"40","trial":"{C8B655BB-28A0-4BB6-BDE1-D0826457B2DF}","ver":"4.0"},
+"50":{"S1":5459,"S2":7378,"gost":true,"srv":true,"uts":true,"key":"{50F91F80-D397-437C-B0C8-62128DE3B55E}","name":"CSP","pack":"50","trial":"{4BE57065-DC50-4239-8E32-11FABAF5ECF5}","ver":"5.0"},
+"AF":{"S1":8677,"S2":4860,"key":"{B494FFDD-E4D9-4484-8A17-3FC728C7A32F}","name":"SSF","pack":"AF","trial":"{CA1B001E-6B16-4E11-8479-55D4A01DD804}","ver":"1.0"},
+"CD":{"S1":8245,"S2":7239,"name":"CSP","pack":"CD","ver":"3.0"},
+"D5":{"S1":4129,"S2":4357,"name":"DSS","pack":"D5","ver":"1.0"},
+"EF":{"S1":7052,"S2":2494,"key":"{368F645E-3059-4DE5-B6D7-BCFE55A8032D}","name":"EFS","pack":"EF","trial":"{DE4BF2E9-C129-4E88-85DB-4B7526844631}","ver":"2.0"},
+"EF1":{"S1":6963,"S2":8724,"name":"EFS","pack":"EF","ver":"1.0"},
+"EX":{"S1":9073,"S2":2534,"name":"EX?","pack":"EX","ver":"1.0"},
+"HC":{"S1":8011,"S2":8654,"key":"{F2F88A77-F7E6-4C9E-9C67-CB1855C62B45}","name":".NET (client)","pack":"HC","trial":"{EB3462F5-EF6A-4C62-AEC2-6FB1E4AE1E15}","ver":"1.0"},
+"HH":{"S1":2736,"S2":4496,"key":"{F2F88A77-F7E6-4C9E-9C67-CB1855C62B45}","name":".NET (serv)","pack":"HH","trial":"{EB3462F5-EF6A-4C62-AEC2-6FB1E4AE1E15}","ver":"1.0"},
+"NY":{"S1":6327,"S2":5549,"key":"{BA4B3CCF-2558-4367-BAA4-D04B006A6BD1}","name":"Sig.Check.Service","pack":"NY","trial":"{F81D7574-E7B6-42c3-9735-86F47AF5EE4E}","ver":"1.0"},
+"P0":{"S1":6457,"S2":9034,"gost":true,"uts":2,"key":"{23227C2E-F9E2-22E4-92C2-11215C328816}/ThreadingModel","name":"Tool.CryptCP","pack":"P0","trial":"{EG1EBFG3-B399-22E2-9798-117119C1F6E3}","ver":"1.0"},
+"PD2":{"S1":3845,"S2":3409,"key":"{FEB8699B-98F0-4520-8253-95CD621B99BC}","name":"PDF","pack":"PD","trial":"{03299E61-701D-488D-88E4-043A912790B9}","ver":"2.0"},
+"PD":{"S1":3845,"S2":3409,"key":"{85CE021C-3982-446B-91D0-47CCFFE1BE4D}","name":"PDF","pack":"PD","trial":"{AC727718-838B-4C0C-976C-A34D432A0480}","ver":"1.6"},
+"PD1":{"S1":3845,"S2":3409,"key":"{FEB8699B-98F0-4520-8253-95CD621B99BC}","name":"PDF","pack":"PD","trial":"{03299E61-701D-488D-88E4-043A912790B9}","ver":"1.4"},
+"RP":{"S1":9623,"S2":1985,"key":"SOFTWARE/Crypto Pro/RP/2.0","name":"Revocation.Prov","pack":"RP","trial":"{2459B744-3F27-4962-9AE2-E2C2FC07D893}","ver":"2.0"},
+"RP1":{"S1":9623,"S2":1985,"key":"SOFTWARE/Crypto Pro/RP","name":"Revocation.Prov","pack":"RP","trial":"{15C59642-589A-4B38-ABED-391C9823DF43}","ver":"1.0"},
+"TA":{"S1":1565,"S2":4393,"key":"SOFTWARE/Crypto Pro/TSPAPI/2.0","name":"TSP Client","pack":"TA","trial":"{D7B0E69E-44C2-4526-A1F2-F9DB46EE4613}","ver":"2.0"},
+"TA1":{"S1":1565,"S2":4393,"key":"SOFTWARE/Crypto Pro/TSPAPI","name":"TSP Client","pack":"TA","trial":"{A18E9B97-4A50-4748-BD7F-0C6B04A61D99}","ver":"1.0"},
+"TD":{"S1":7342,"S2":3485,"key":"{E756B772-F853-46C7-ACA7-43082678DF96}","name":"TSP SDK","pack":"TD","trial":"{01764ACF-FDB2-4A4C-9EB3-8D1A860E8234}","ver":"1.0"},
+"TS":{"S1":3485,"S2":7890,"key":"{F0740A19-6AAC-46B2-8413-6AFF70562B2C}","name":"TSP Server","pack":"TS","trial":"{E3F1AAD0-B7FC-48F7-8BBE-000095E3E11C}","ver":"2.0"},
+"WL":{"S1":3478,"S2":4857,"uts":true,"name":"WL","pack":"WL","trial":"{FA868689-9029-49D5-AF19-8185CE427ED0}","ver":"1.0"},
+"WS":{"S1":8108,"S2":3964,"uts":true,"name":"WS","pack":"WS","trial":"{FA868689-9029-49D5-AF19-8185CE427ED0}","ver":"1.0"},
+"C0":{"S1":1702,"S2":2676,"key":"{9C00B9BD-C024-4f3e-8841-9CBF5ED6606A}","name":"CPCA","pack":"C0","trial":"{AE80E7B4-4DDD-40d7-AB8D-BE06171A81D2}","ver":"2.0"},
+"R0":{"S1":1223,"S2":3455,"key":"{69A9C39F-B4D8-4432-9F93-0C917B21EC1C}","name":"CPRA","pack":"R0","trial":"{EB819EDA-EF5C-429b-AC6F-A22C55B5A0A4}","ver":"2.0"},
+"CR":{"S1":1684,"S2":8448,"key":"{05393BCB-EF8E-480D-8BB0-B124F2CAEF4D}","name":"CPRARAClient","pack":"CR","trial":"{E71FF269-6777-44c1-8BE8-A25551D69F92}","ver":"2.0"},
+"RS":{"S1":3333,"S2":1210,"key":"{2DBA7935-8196-42B6-AA53-3E100ED97710}","name":"RS","pack":"RS","trial":"{63DB4883-27DE-47D4-BC34-9AA996127176}","ver":"2.0"},
+};
+
+var MIME='0123456789ABCDEFGHKLMNPQRTUVWXYZ';
+function B2M(src){
+	var dst='',il=src.length,i=0,rest=0,buf=0;
+	for(;i<il;i++){for(buf|=src[i]<<rest,rest+=8;rest>=5;buf>>=5,rest-=5){
+	dst+=MIME.charAt(buf&31)}}
+	if(rest>0){dst+=MIME.charAt(buf&31)}
+	return dst;
+}
+function format1(src){return src.replace(/.....(?!$)/g,"$&-");}
+function unformat1(){return tkey.value.toUpperCase().replace(/[^0-9A-Z]/g,'');}
+function unformat2(){return (unformat1()+"00000000000000000").substr(0,17);}
+function auto1(){
+	var src=unformat2();
+	sel.value=src.substr(0,2);
+	dosel();
+	subver.value=src.substr(4,2);
+	ver.value=src.substr(2,1)+'.'+src.substr(3,1);
+	tri.value=src.substr(6,1);
+	mon.value=src.substr(7,2);
+	fff.value=src.substr(9,3);
+	clisrv.value=src.substr(11,1);
+	ccc.value=src.substr(12,3);
+	xx.value=src.substr(15,2);
+}
+function tosalted1(s1,s2,src){
+	var word=[],i,il,bin=new Uint8Array(8+src.length*2);
+	word.push(s1&65535,65535&(s1>>16));
+	for(i=0,il=src.length;i<il;i++) word.push(src.charCodeAt(i));
+	word.push(s2&65535,65535&(s2>>16));
+	for(i=0,il=word.length;i<il;i++) bin[i*2]=word[i]&255,bin[i*2+1]=word[i]>>8;
+	return bin;
+}
+function dodigest1(s1,s2,gost,src){
+	var bin=tosalted1(s1,s2,src);
+	var cipher=new GostDigest(gost? {name: 'GOST R 34.11', version: 1994} : {name: 'SHA', version: 1});
+	var dig=cipher.digest(bin);
+	return {B32:B2M(new Uint8Array(dig)),SRC:src,BIN:bin,DIG:dig};
+}
+function fix1(){
+	var src=unformat2();
+	var s1=parseInt(S1.value),s2=parseInt(S2.value),g=isgost.checked;
+        var org1=org.value;
+        if (org.disabled) org1='';
+	var res=dodigest1(s1,s2,g,src+org1);
+
+	var gostCoding=new GostCoding();
+	hex2.innerText=gostCoding.Hex.encode(res['BIN']);
+	checksum.innerText=gostCoding.Hex.encode(res['DIG']);
+
+	var res32=b32.innerText=res['B32'];
+	fkey.value=format1(src+res32.substr(0,8));
+}
+function tri2(){
+	var src=unformat1();
+	<!--var sr=isserver.checked?'K':'0';
+	var sr=clisrv.value;
+	src=src.substr(0,11) + sr + src.slice(12);
+	tkey.value=format1((src+'00000000').slice(0,25));
+	fff.value=format1(('00'+sr).slice(0,3));
+}
+function tri1(){
+	var src=unformat1();
+	var pd=(sel.value).slice(0,2);
+	var t1=('0'+tri.value.replace(/[^0123]/g,'')).slice(-1);
+        org.disabled=t1=='0' || t1=='3';
+	var tclisrv=('0'+clisrv.value.replace(/[^0-9A-Z]/g,'')).slice(-1);
+	var t2=('00'+mon.value.replace(/[^0-9A-Z]/g,'')).slice(-2);
+	var tver=('00'+ver.value).replace(/[^A-Z0-9]/g,'').slice(-2);
+	var sver=('00'+subver.value).replace(/[^A-Z0-9]/g,'').slice(-2);
+	var tfff=('000'+fff.value).replace(/[^A-Z0-9]/g,'').slice(-3);
+	var tccc=('000'+ccc.value).replace(/[^A-Z0-9]/g,'').slice(-3);
+	var txx=('000'+xx.value).replace(/[^A-Z0-9]/g,'').slice(-2);
+	src= pd + tver + sver + t1 + t2 + tfff + tccc + txx + src.slice(17);
+	tkey.value=format1(src);
+}
+var tse,ttk;
+function date1(){
+	var DAT=new Date(),y=DAT.getFullYear()-2000,m=DAT.getMonth()+1,d=DAT.getDate(),
+	    uts=Math.ceil(DAT.getTime()/1000),
+	    z='0',i=4,il=8,bts=new Uint8Array(il);
+
+	for(;i<il;i++) bts[i]=255&(uts>>(56-i*8));
+	var ts32=B2M(bts);
+	var ts=(z+d).slice(-2) + (z+m).slice(-2) + (z+y).slice(-2);
+	for(i=0,il=ts.length,tse='';i<il;i++) tse+=String.fromCharCode(ts.charCodeAt(i)+10);
+
+	var S=CPRO_SECRETS['CP'];
+	var tdig=dodigest1(S['S1'],S['S2'],S['gost'],ts32);
+	ttk=ts32+tdig['B32'];
+}
+function dosel(){
+	var s=CPRO_SECRETS[sel.value];
+	var s1=S1.value=s['S1'];
+	var s2=S2.value=s['S2'];
+	ver.value=s['ver'];
+	subver.value='subver' in s ? s['subver'] : '';
+	var g=isgost.checked=s['gost'];
+	clisrv.disabled=!s['srv'];
+	trireg.innerText='trial' in s ? s['trial'] : '!UNAVAIL!'
+
+	if (!ttk) date1();
+	trikey.innerText=('uts' in s) ? ttk: (tse+((dodigest1(s1,s2,g,tse))['B32']));
+}
+</script>
+</head><body>
+<div class="container">
+	<div class="page-header">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="page-header">
+					<h1 id="forms">KeyGen/Fixer</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+		<div class="progress">
+			<div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+				<div class="well bs-component">
+					<div class="row">	
+						<div class="col-lg-12">
+							<div class="card border-primary">
+								<h6 class="card-header"><b>Создать новый (aka IDDQD)</b></h6>
+								<ul class="list-group list-group-flush"><li class="list-group-item">
+								Очищаете поле <a href=#tkey>Dirty</a>, выбираете продукт, жмёте <b>Free</b> (заполняется триал и появляется начало ключа в строке <a href=#tkey>Dirty</a>). Правите версию и другие поля вручную. Жмёте <b>Fix</b> и дегустируете ключ в поле <a href=#fkey>Fixed</a>. <b>Если выбрали расширенную или стандартную версию продукта</b>, запишите в поле <a href=#org>Org</a> название организации. Это название должно совпадать с тем, что вы введёте в поле "Организация" инсталлятора. Следите за пробелами и "минусами" если они есть в названии - "минусы" должны быть символами ASCII '-' а не какими-то юникодовыми символами.<br>
+								</li></ul>
+								<h6 class="card-header"><b>Изменить</b></h6>
+								<ul class="list-group list-group-flush"><li class="list-group-item">
+								Вводите в поле <a href=#tkey>Dirty</a> Ваш триальный ключ, жмёте (последовательно) кнопки <b>Auto</b>, <b>Free</b>, <b>Fix</b>. В поле <a href=#fkey>Fixed</a> ваш "вылеченный" ключ.	
+								</li></ul>
+								<h6 class="card-header"><b>Сервер</b></h6>
+								<ul class="list-group list-group-flush"><li class="list-group-item">
+								Делаем серверный ключ из не-серверного или для другой версии. Вводите в поле <a href=#tkey>Dirty</a> Ваш старый ключ, жмёте кнопку <b>Auto</b>, правите номер версии и/или выбираете тип <b>isServer</b>, жмёте <b>Fix</b>. В поле <a href=#fkey>Fixed</a> ваш "исправленный" ключ.
+								</li></ul>
+								<div class="card-body">
+								<form class="bs-component">
+									<fieldset>
+										<div class="form-group row">
+											<div class="col-lg-3">
+												<label for="select" class="control-label">Selects (PP):</label>
+												<select class="form-control form-control-sm" id="sel" onchange="dosel()"><option disabled selected>CryptoProduct</option></select>
+												<script> var sel = document.getElementById("sel"); for (var key in CPRO_SECRETS){var c=CPRO_SECRETS[key]; var op=document.createElement("option"); op.value=key; op.text=c['name']+' '+c['ver']; sel.appendChild(op); } </script>
+											</div>
+											<div class="col-lg-1">
+												<label for="S1" class="control-label">S1:</label>
+												<input id="S1" class="form-control form-control-sm" type="text">
+											</div>
+											<div class="col-lg-1">
+												<label for="S2" class="control-label">S2:</label>
+												<input id="S2" class="form-control form-control-sm" type="text">
+											</div>
+											<div class="col-lg-1">
+												<label for="isgost" class="control-label">Gost:</label><br>
+												<input id="isgost" type="checkbox" disabled>
+											</div>
+											<div class="col-lg-1">
+												<label for="ver" class="control-label">Ver (VV):</label>
+												<input id="ver" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+											<div class="col-lg-1">
+												<label for="subver" class="control-label">Sub (SS):</label>
+												<input id="subver" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-lg-3">
+												<label for="tri" class="control-label">Trial (T):</label>
+												<select class="form-control form-control-sm" id="tri" onchange="tri1()"><option value=0>Evaluation</option><option value=1>Standard</option><option value=2>Extended</option><option value=3>Trial</option></select>
+											</div>
+											<div class="col-lg-1">
+												<label for="mon" class="control-label">Month(MM):</label>
+												<input id="mon" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+											<div class="col-lg-1">
+												<label class="control-label">&emsp;</label>
+												<button type="button" class="btn btn-primary btn-sm btn-block"  onclick="tri.value=0;mon.value='00';tri1()">Free</button>
+											</div>
+											<div class="col-lg-3">
+												<label for="org" class="control-label">Org:</label>
+												<input id="org" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+											
+										</div>
+										<div class="form-group row">
+											<div class="col-lg-4 has-warning">
+												<label for="tkey" class="control-label">Dirty (PPVVS-STMMF-FFCCC-XXHHH-HHHHH):</label>
+												<input id="tkey" class="form-control form-control-sm" type="text">
+											</div>
+											<div class="col-lg-1">
+												<label class="control-label">&emsp;</label>
+												<button type="button" class="btn btn-warning btn-sm btn-block" onclick="auto1()">Auto</button>
+											</div>
+											<div class="col-lg-1">
+												<label for="fff" class="control-label">(F-FF):</label>
+												<input id="fff" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+											<div class="col-lg-1">
+												<label for="ccc" class="control-label">(CCC):</label>
+												<input id="ccc" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+											<div class="col-lg-1">
+												<label for="xx" class="control-label">(XX):</label>
+												<input id="xx" class="form-control form-control-sm" type="text" onchange="tri1()">
+											</div>
+										</div>
+										<div class="form-group row">
+											<div class="col-lg-4 has-success">
+												<label for="fkey" class="control-label">Fixed (PPVVS-STMMF-FFCCC-XXHHH-HHHHH):</label>
+												<input id="fkey" class="form-control form-control-sm" type="text">
+											</div>
+											<div class="col-lg-1">
+												<label class="control-label">&emsp;</label>
+												<button type="button" class="btn btn-success btn-sm btn-block" onclick="fix1()">Fix</button>
+											</div>
+											<div class="col-lg-3">
+												<label for="clisrv" class="control-label">isServer (F-F<b>F</b>), CSP | WinLogon:</label>
+												<select class="form-control form-control-sm" id="clisrv" onchange="tri2()">
+													<option value=1>1 - Client | WL: OFF</option>
+													<option value=2>2 - Server | WL: OFF</option>
+													<option value=A>A - Server | WL: Client</option>
+													<option value=K>K - Server | WL: Server</option>
+													<option value=R>R - Client | WL: Client, Server</option>
+													<option value=U>U - Server | WL: Client, Server</option>
+													<option value=Z>Z - Maximum | WL: Maximum</option>
+												</select>
+											</div>
+										</div>
+									</fieldset>
+								</form>
+								</div>
+								<div class="list-group">
+										<a class="list-group-item list-group-item-action disabled">
+										<h4>Service info</h4>
+										<b>RawHex:</b> <span id=hex2></span>
+										<br><b>Checksum:</b> <span id=checksum></span>
+										<br><b>Base32:</b> <span id=b32></span>
+										<br><b>Trial Reset:</b> reg add HKCR\CLSID\<span id=trireg></span>\InprocServer32 /reg:32 /f /v InprocServer32 /d "<span id=trikey></span>"
+										</a>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="progress">
+		<div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Формат ключа:</h4>
+			<pre>
+PPVVS-STMMF-FFCCC-XXHHH-HHHHH
+ 
+Допустимые буквы в ключе: 0123456789ABCDEFGHKLMNPQRTUVWXYZ
+Выкинуты буквы Ай, Джи, Эс, Оу. I(i),J,S,O
+Минусы в ключе игнорируются (нужны для удовлетворения эстетических чувств человеков).
+ 
+Поля SS, FFF, CCC, XX - правьте как вам угодно.
+ 
+PP VV - продукт и версия, (только в поле PP допускаются любые символы, например есть WS).  
+SS - подверсия. Стреляет только в CSP 3.6 для спецпродуктов (УЭК, Гемальто и т.п.). Для других продуктов=рандом.
+TMM - триальные поля:
+T=тип ключа (0=оценочная версия, 1=стандартная, 2=расширенная, 3=триал на 1 месяц + ММ игнорируется).
+   Сравнение берётся по &3, т.ч. можно ставить и другие значения.
+   Ключи для стандартной и расширенной версии зависят от названия организации.
+MM - количество месяцев триала. 01=1, 02=2, 0Z=31, 10=32 и т.д. T1=801 месяцу (максимум),
+   00=безлимит (только если поле Т<3).
+FFF -флаги: последнюю букву поставил в К и ключ превратился серверный. Других чудес не встречал.
+    Есть информация, что для УЦ в этом поле закодировано количество пользователей. 
+ССС - поле времени (то ли конца ключа, то ли его создания). Значение = 000 гарантированно недопустимое.
+1 - год-2006. 0=2006, Z=2037.
+2 - месяц. 1-9=январь-сентябрь, A,B,C октябрь, ноябрь, декабрь. 0 и D+ - сносят крышу менеджеру лицензий.
+3 - день. 1=1, Z=31.(0-нельзя но если уж очень хочется ... разрешаю)
+ХХ - похоже просто рандом.
+HHHHHHHH - 8 первых символов хеша. Пересчитываются кнопкой "Fix".
+
+Enjoy! by CryptoDedMoroz</pre>
+		</div>
+		<div class="progress"><div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100"></div></div>
+		<div class="card-body">
+			<pre>
+Разная полезная информация. С миру по нитки:
+Для ruToken CSP 3.9 подходят ключи от ruToken CSP 3.6 (начало 36360R)
+Название организации для не-evaluate ключей влияет на ключ (второй символ во второй группе не ноль).
+Следите, чтобы название организации было пустое поле - иначе ключи могут не подойти.
+Или бывает наоборот - ключи с названием организации нельзя ввести в инсталляторе,
+но можно ввести потом в диспетчере лицензий.
+			</pre>
+		</div>
+	</div>
+</div>
